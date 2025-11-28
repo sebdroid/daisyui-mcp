@@ -61,7 +61,7 @@ Try asking your AI assistant:
 
 ```bash
 git clone https://github.com/birdseyevue/daisyui-mcp.git
-cd fastmcp
+cd daisyui-mcp
 ```
 
 ### 2. Create a virtual environment (recommended)
