@@ -1,3 +1,10 @@
+#!/usr/bin/env -S uv run --script
+#
+# /// script
+# requires-python = ">=3.10"
+# dependencies = ["fastmcp>=2.14.2"]
+# ///
+
 from pathlib import Path
 from fastmcp import FastMCP
 
