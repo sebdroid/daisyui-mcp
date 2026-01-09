@@ -1,3 +1,10 @@
+#!/usr/bin/env -S uv run --script
+#
+# /// script
+# requires-python = ">=3.10"
+# ///
+
+
 import urllib.request
 import os
 import re
@@ -8,7 +15,7 @@ import re
 
 def main():
     url = "https://daisyui.com/llms.txt"
-    components_dir = os.path.join(os.getcwd(), "components")
+    components_dir = os.path.join(os.path.dirname(__file__), "components")
 
     if not os.path.exists(components_dir):
         os.makedirs(components_dir)
