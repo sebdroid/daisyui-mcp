@@ -73,6 +73,15 @@ uv run update_components.py
 Add the MCP server to your AI assistant’s configuration.
 
 <details>
+<summary><b>Claude Code</b></summary>
+
+```bash
+claude mcp add --transport stdio --scope user daisyui -- uv run <path-to-repo>/mcp_server.py
+```
+
+</details>
+
+<details>
 <summary><b>Generic Configuration</b></summary>
 
 ```json
