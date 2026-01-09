@@ -33,29 +33,13 @@ This server exposes two tools that AI assistants can use:
 
 ## 📦 Installation
 
-### 1. Clone the repository
+> This method assumes you have already installed `uv`. If not, follow [these instructions](https://docs.astral.sh/uv/getting-started/installation/).
+
+### Clone the repository
 
 ```bash
 git clone https://github.com/birdseyevue/daisyui-mcp.git
 cd daisyui-mcp
-```
-
-### 2. Create a virtual environment (recommended)
-
-```bash
-python -m venv venv
-
-# Windows
-venv\Scripts\activate
-
-# macOS/Linux
-source venv/bin/activate
-```
-
-### 3. Install dependencies
-
-```bash
-pip install -r requirements.txt
 ```
 
 ## 🚀 Usage
@@ -65,7 +49,7 @@ pip install -r requirements.txt
 On first run, the MCP server will not have any component docs. Fetch them by running:
 
 ```bash
-python update_components.py
+uv run update_components.py
 ```
 
 This fetches the latest `llms.txt` from DaisyUI and generates all the markdown files in `/components`.
@@ -73,7 +57,7 @@ This fetches the latest `llms.txt` from DaisyUI and generates all the markdown f
 ### Running the server
 
 ```bash
-python mcp_server.py
+uv run mcp_server.py
 ```
 
 ### Updating component docs
@@ -81,7 +65,7 @@ python mcp_server.py
 If DaisyUI releases new components or updates their docs, simply run:
 
 ```bash
-python update_components.py
+uv run update_components.py
 ```
 
 ## ⚙️ Configuration
@@ -95,40 +79,8 @@ Add the MCP server to your AI assistant’s configuration.
 {
   "servers": {
     "daisyui": {
-      "command": "<path-to-repo>/venv/Scripts/python.exe",
-      "args": ["<path-to-repo>/mcp_server.py"]
-    }
-  }
-}
-```
-
-</details>
-
-<details>
-<summary><b>Windows Example</b></summary>
-
-```json
-{
-  "servers": {
-    "daisyui": {
-      "command": "C:/Users/username/Downloads/fastmcp/venv/Scripts/python.exe",
-      "args": ["C:/Users/username/Downloads/fastmcp/mcp_server.py"]
-    }
-  }
-}
-```
-
-</details>
-
-<details>
-<summary><b>macOS/Linux Example</b></summary>
-
-```json
-{
-  "servers": {
-    "daisyui": {
-      "command": "/home/username/fastmcp/venv/bin/python",
-      "args": ["/home/username/fastmcp/mcp_server.py"]
+      "command": "uv",
+      "args": ["run", "<path-to-repo>/mcp_server.py"]
     }
   }
 }
